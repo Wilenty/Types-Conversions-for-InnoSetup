@@ -1,0 +1,319 @@
+﻿//***************************************************************************************************
+//    If my work helped you in any way please support me on:
+//          https://www.buymeacoffee.com/Wilenty
+//                      or on:
+//            https://www.patreon.com/Wilenty
+//***************************************************************************************************
+
+[files]
+Source: "TypesConversions4InnoSetup.dll"; DestDir: "{tmp}"; Flags: DontCopy IgnoreVersion
+
+[code]
+Type
+  PAnsiString = Integer;
+  PString = PAnsiString;
+
+Function AnsiString2PAnsiString(aString: AnsiString): PAnsiString;
+  External 'AnsiString2PAnsiString@files:TypesConversions4InnoSetup.dll stdcall';
+
+
+function PAnsiString4Length(S: PAnsiString): Integer;
+  External 'PAnsiString4Length@files:TypesConversions4InnoSetup.dll stdcall';
+
+
+Function PAnsiString2AnsiString(paString: PAnsiString): AnsiString;
+  External 'PAnsiString2AnsiString@files:TypesConversions4InnoSetup.dll stdcall';
+
+Type
+  LPCSTR = PAnsiChar;
+  LPCTSTR = PAnsiChar;
+  LPTSTR = PAnsiChar;
+  LPSTR = PAnsiChar;
+
+#if defined Unicode
+Type
+  PWideChar = LongWord;
+
+Function WideString2PWideChar(wString: WideString): PWideChar;
+  External 'WideString2PWideChar@files:TypesConversions4InnoSetup.dll stdcall';
+
+
+function PWideChar4Length(pwChar: PWideChar): Integer;
+  External 'PWideChar4Length@files:TypesConversions4InnoSetup.dll stdcall';
+
+Procedure SetLength4PWideChar(var pwChar: PWideChar; Len: Integer);
+  External 'SetLength4PWideChar@files:TypesConversions4InnoSetup.dll stdcall';
+
+
+Function PWideChar2WideString(pwChar: PWideChar): WideString;
+  External 'PWideChar2WideString@files:TypesConversions4InnoSetup.dll stdcall';
+
+Type
+  PWideString = LongWord;
+
+Function WideString2PWideString(wString: WideString): PWideString;
+  External 'WideString2PWideString@files:TypesConversions4InnoSetup.dll stdcall';
+
+
+function PWideString4Length(pwString: PWideString): Integer;
+  External 'PWideString4Length@files:TypesConversions4InnoSetup.dll stdcall';
+
+Procedure SetLength4PWideString(var pwString: PWideString; Len: Integer);
+  External 'SetLength4PWideString@files:TypesConversions4InnoSetup.dll stdcall';
+
+
+Function PWideString2WideString(pwString: PWideString): WideString;
+  External 'PWideString2WideString@files:TypesConversions4InnoSetup.dll stdcall';
+
+Type
+  PWChar = PWideChar;
+  LPWSTR = PWideChar;
+  LPCWSTR = PWideChar;
+  WCHAR = WideChar;
+
+Type
+  PInt64 = LongInt;
+
+Function Int642PInt64(iInt64: Int64): PInt64;
+  External 'Int642PInt64@files:TypesConversions4InnoSetup.dll stdcall';
+
+Function PInt642Int64(pInt64: PInt64): Int64;
+  External 'PInt642Int64@files:TypesConversions4InnoSetup.dll stdcall';
+
+Type
+  LONG64 = Int64;
+  PLONG64 = PInt64;
+  LONGLONG = Int64;
+#EndIf
+
+Type
+  LCID = DWORD;
+  LANGID = Word;
+
+  SHORT = Smallint;
+  UCHAR = Byte;
+//  UINT = LongWord;
+  ULONG = Cardinal;
+  USHORT = Word;
+
+  ULONG32 = LongWord;
+  LONG = Longint;
+
+Type
+  PBOOL = Integer;
+
+Function BOOL2PBOOL(bBOOL: BOOL): PBOOL;
+  External 'BOOL2PBOOL@files:TypesConversions4InnoSetup.dll stdcall';
+
+Function PBOOL2BOOL(pBOOL: PBOOL): BOOL;
+  External 'PBOOL2BOOL@files:TypesConversions4InnoSetup.dll stdcall';
+
+Type
+  PBoolean = Integer;
+
+Function Boolean2PBoolean(bBoolean: Boolean): PBoolean;
+  External 'Boolean2PBoolean@files:TypesConversions4InnoSetup.dll stdcall';
+
+Function PBoolean2Boolean(pBoolean: PBoolean): Boolean;
+  External 'PBoolean2Boolean@files:TypesConversions4InnoSetup.dll stdcall';
+
+Type
+  PByte = Integer;
+
+Function Byte2PByte(bByte: Byte): PByte;
+  External 'Byte2PByte@files:TypesConversions4InnoSetup.dll stdcall';
+
+Function PByte2Byte(pByte: PByte): Byte;
+  External 'PByte2Byte@files:TypesConversions4InnoSetup.dll stdcall';
+
+Type
+  PCardinal = Integer;
+
+Function Cardinal2PCardinal(cCardinal: Cardinal): PCardinal;
+  External 'Cardinal2PCardinal@files:TypesConversions4InnoSetup.dll stdcall';
+
+Function PCardinal2Cardinal(pCardinal: PCardinal): Cardinal;
+  External 'PCardinal2Cardinal@files:TypesConversions4InnoSetup.dll stdcall';
+
+Type
+  PCurrency = Integer;
+
+Function Currency2PCurrency(cCurrency: Currency): PCurrency;
+  External 'Currency2PCurrency@files:TypesConversions4InnoSetup.dll stdcall';
+
+Function PCurrency2Currency(pCurrency: PCurrency): Currency;
+  External 'PCurrency2Currency@files:TypesConversions4InnoSetup.dll stdcall';
+
+(*
+Type
+  PDateTime = Integer;
+
+Function TDateTime2PDateTime(tTDateTime: TDateTime): PDateTime;
+  External 'TDateTime2PDateTime@files:TypesConversions4InnoSetup.dll stdcall';
+
+Function PDateTime2TDateTime(pTDateTime: PDateTime): TDateTime;
+  External 'PCurrency2Currency@files:TypesConversions4InnoSetup.dll stdcall';
+*)
+
+Type
+  PDispatch = Integer;
+
+Function IDispatch2PDispatch(iIDispatch: IDispatch): PDispatch;
+  External 'IDispatch2PDispatch@files:TypesConversions4InnoSetup.dll stdcall';
+
+Function PDispatch2IDispatch(pIDispatch: PDispatch): IDispatch;
+  External 'PDispatch2IDispatch@files:TypesConversions4InnoSetup.dll stdcall';
+
+Type
+  PDouble = LongInt;
+
+Function Double2PDouble(dDouble: Double): PDouble;
+  External 'Double2PDouble@files:TypesConversions4InnoSetup.dll stdcall';
+
+Function PDouble2Double(pDouble: PDouble): Double;
+  External 'PDouble2Double@files:TypesConversions4InnoSetup.dll stdcall';
+
+Type
+  PDWORD = Integer;
+
+Function DWORD2PDWORD(dDWORD: DWORD): PDWORD;
+  External 'Double2PDouble@files:TypesConversions4InnoSetup.dll stdcall';
+
+Function PDWORD2DWORD(pDWORD: PDWORD): DWORD;
+  External 'PDouble2Double@files:TypesConversions4InnoSetup.dll stdcall';
+
+Type
+  PExtended = LongInt;
+
+Function Extended2PExtended(eExtended: Extended): PExtended;
+  External 'Extended2PExtended@files:TypesConversions4InnoSetup.dll stdcall';
+
+Function PExtended2Extended(pExtended: PExtended): Extended;
+  External 'PExtended2Extended@files:TypesConversions4InnoSetup.dll stdcall';
+
+Type
+  PHandle = Integer;
+
+Function THandle2PHandle(tTHandle: THandle): PHandle;
+  External 'THandle2PHandle@files:TypesConversions4InnoSetup.dll stdcall';
+
+Function PHandle2THandle(pTHandle: PHandle): THandle;
+  External 'PHandle2THandle@files:TypesConversions4InnoSetup.dll stdcall';
+
+Type
+  PInteger = Integer;
+
+Function Integer2PInteger(iInteger: Integer): PInteger;
+  External 'Integer2PInteger@files:TypesConversions4InnoSetup.dll stdcall';
+
+Function PInteger2Integer(pInteger: PInteger): Integer;
+  External 'PInteger2Integer@files:TypesConversions4InnoSetup.dll stdcall';
+
+Type
+  PLongint = Integer;
+
+Function Longint2PLongint(lLongint: Longint): PLongint;
+  External 'Longint2PLongint@files:TypesConversions4InnoSetup.dll stdcall';
+
+Function PLongint2Longint(pLongint: PLongint): Longint;
+  External 'PLongint2Longint@files:TypesConversions4InnoSetup.dll stdcall';
+
+Type
+  PLongWord = Integer;
+
+Function LongWord2PLongWord(lLongWord: LongWord): PLongWord;
+  External 'LongWord2PLongWord@files:TypesConversions4InnoSetup.dll stdcall';
+
+Function PLongWord2LongWord(pLongWord: PLongWord): LongWord;
+  External 'PLongint2Longint@files:TypesConversions4InnoSetup.dll stdcall';
+
+Type
+  PShortInt = Integer;
+
+Function ShortInt2PShortInt(sShortInt: ShortInt): PShortInt;
+  External 'ShortInt2PShortInt@files:TypesConversions4InnoSetup.dll stdcall';
+
+Function PShortInt2ShortInt(pShortInt: PShortInt): ShortInt;
+  External 'PShortInt2ShortInt@files:TypesConversions4InnoSetup.dll stdcall';
+
+Type
+  PSingle = LongInt;
+
+Function Single2PSingle(sSingle: Single): PSingle;
+  External 'Single2PSingle@files:TypesConversions4InnoSetup.dll stdcall';
+
+Function PSingle2Single(pSingle: PSingle): Single;
+  External 'PSingle2Single@files:TypesConversions4InnoSetup.dll stdcall';
+
+Type
+  PSmallInt = Integer;
+
+Function SmallInt2PSmallInt(sSmallInt: SmallInt): PSmallInt;
+  External 'SmallInt2PSmallInt@files:TypesConversions4InnoSetup.dll stdcall';
+
+Function PSmallInt2SmallInt(pSmallInt: PSmallInt): SmallInt;
+  External 'PSmallInt2SmallInt@files:TypesConversions4InnoSetup.dll stdcall';
+
+Type
+  PUCHAR = PByte;
+
+Type
+  PUINT = Integer;
+
+Function UINT2PUINT(uUINT: UINT): PUINT;
+  External 'UINT2PUINT@files:TypesConversions4InnoSetup.dll stdcall';
+
+Function PUINT2UINT(pUINT: PUINT): UINT;
+  External 'PUINT2UINT@files:TypesConversions4InnoSetup.dll stdcall';
+
+Type
+  PULONG = Integer;
+
+Function ULONG2PULONG(uULONG: ULONG): PULONG;
+  External 'ULONG2PULONG@files:TypesConversions4InnoSetup.dll stdcall';
+
+Function PULONG2ULONG(pULONG: PULONG): ULONG;
+  External 'PULONG2ULONG@files:TypesConversions4InnoSetup.dll stdcall';
+
+Type
+  PUnknown = Integer;
+
+Function IUnknown2PUnknown(iIUnknown: IUnknown): PUnknown;
+  External 'IUnknown2PUnknown@files:TypesConversions4InnoSetup.dll stdcall';
+
+Function PUnknown2IUnknown(pIUnknown: PUnknown): IUnknown;
+  External 'PULONG2ULONG@files:TypesConversions4InnoSetup.dll stdcall';
+
+Type
+  PVariant = Integer;
+
+Function Variant2PVariant(vVariant: Variant): PVariant;
+  External 'Variant2PVariant@files:TypesConversions4InnoSetup.dll stdcall';
+
+Function PVariant2Variant(pVariant: PVariant): Variant;
+  External 'PVariant2Variant@files:TypesConversions4InnoSetup.dll stdcall';
+
+Type
+  PWord = Integer;
+
+Function Word2PWord(wWord: Word): PWord;
+  External 'Word2PWord@files:TypesConversions4InnoSetup.dll stdcall';
+
+Function PWord2Word(pWord: PWord): Word;
+  External 'PWord2Word@files:TypesConversions4InnoSetup.dll stdcall';
+
+Type
+  PWordBool = Integer;
+
+Function WordBool2PWordBool(wWordBool: WordBool): PWordBool;
+  External 'WordBool2PWordBool@files:TypesConversions4InnoSetup.dll stdcall';
+
+Function PWordBool2WordBool(pWordBool: PWordBool): WordBool;
+  External 'PWordBool2WordBool@files:TypesConversions4InnoSetup.dll stdcall';
+
+Type
+  LPDWORD = PDWORD;
+  PINT = PInteger;
+
+  PSHORT = PSmallint;
+  PUSHORT = PWord;
