@@ -3,6 +3,7 @@
 //          https://www.buymeacoffee.com/Wilenty
 //                      or on:
 //            https://www.patreon.com/Wilenty
+//
 //***************************************************************************************************
 
 [files]
@@ -317,3 +318,19 @@ Type
 
   PSHORT = PSmallint;
   PUSHORT = PWord;
+
+// CheckPointer4NIL: Result := AnyPointer = nil;
+
+Function CheckPAnsiString4NIL(pAnsiString: PAnsiString): Boolean;
+  External 'CheckPointer4NIL@files:TypesConversions4InnoSetup.dll stdcall';
+
+#if defined Unicode
+Function CheckPWideChar4NIL(pWideChar: PWideChar): Boolean;
+  External 'CheckPointer4NIL@files:TypesConversions4InnoSetup.dll stdcall';
+
+Function CheckPWideString4NIL(pWideString: PWideString): Boolean;
+  External 'CheckPointer4NIL@files:TypesConversions4InnoSetup.dll stdcall';
+#EndIf
+
+Function CheckPAnsiChar4NIL(pAnsiChar: PAnsiChar): Boolean;
+  External 'CheckPointer4NIL@files:TypesConversions4InnoSetup.dll stdcall';

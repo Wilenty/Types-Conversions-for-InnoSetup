@@ -3,6 +3,7 @@
 //          https://www.buymeacoffee.com/Wilenty
 //                      or on:
 //            https://www.patreon.com/Wilenty
+//
 //***************************************************************************************************
 
 #define test="TypesConversions4Test"
@@ -98,7 +99,8 @@ Procedure InitializeWizard();
       // ^ Note, please don't call like this: SetLength4PWideChar( PwChar, 0 ); because you will see an error *
       // * please use the: PwChar := WideString2PWideChar(#0); instead, if you want to reset the content *
       GetWindowTextW( Handle, PwChar, PWideChar4Length(PwChar) );
-      MessageBoxW(Handle, WideString2PWideChar('GetWindowTextW: ' + PWideChar2WideString(PwChar)), WideString2PWideChar('MessageBoxW'), MB_ICONINFORMATION);
+      If Not CheckPWideChar4NIL(PwChar) then
+        MessageBoxW(Handle, WideString2PWideChar('GetWindowTextW: ' + PWideChar2WideString(PwChar)), WideString2PWideChar('MessageBoxW'), MB_ICONINFORMATION);
     end;
     Abort;
 end;
